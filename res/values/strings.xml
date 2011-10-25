@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">DeisFood</string>
+    <string name="today_title">What\'s Open Right Now?</string>
+    <string name="today_date">Updated as of October 2011</string>
+    <string name="einsteins_title">Einstein Bros Bagels</string>
+    <string name="einsteins_text">\
+    Monday-Thursday \n
+	8:00 am-2:00 am\n
+	\n
+	Friday\n
+	8:00 am-4:00 pm\n
+	\n
+	Saturday\n
+	11:00 am-3:00 pm\n
+	\n
+	Sunday\n
+	5:00 pm-2:00 am
+    </string>
+    <string name="javacity_title">Java City Schneider</string>
+    <string name="javacity_text">\
+    Monday-Friday\n
+	8:00 am-4:00 pm 
+    </string>
+    <string name="facultyclub_title">The Faculty Club</string>
+    <string name="facultyclub_text">\
+    Monday-Friday\n
+	12:00 pm-1:30 pm
+    </string>
+    <string name="ollies_title">Ollie\'s Eatery</string>
+    <string name="ollies_text">\
+    Thursday-Saturday\n
+	10:00 pm-3:00 am
+    </string>
+    <string name="podusdan_title">P.O.D. Market at Usdan</string>
+    <string name="podusdan_text">\
+    Monday-Thursday\n
+	9:30 am-2:00 am\n
+	\n
+	Friday\n
+	9:30 am-12:00 am\n
+	\n
+	Saturday\n
+	8:00 am-12:00 am\n
+	
+	Sunday\n
+	8:00 am-2:00 am
+    </string>
+    <string name="podvillage_title">P.O.D. Market at Village</string>
+    <string name="podvillage_text">\
+    Monday-Friday\n 
+	12:00 pm – 12:00 am\n
+	\n
+	Sunday\n
+	4:00pm - 12:00 am
+    </string>
+    <string name="quadcafe_title">Quad Café</string>
+    <string name="quadcafe_text">\
+    Monday-Friday\n
+	9:00 am-2:00 pm
+    </string>
+    <string name="quiznos_title">Quiznos</string>
+    <string name="quiznos_text">\
+    Monday-Friday\n
+	11:00 am-2:30 pm\n
+	4:30 pm-12:00 am\n
+	\n
+	Saturday\n
+	11:00 am-12:00 am
+    </string>
+    <string name="sherman_title">Sherman Dining Hall</string>
+    <string name="sherman_text">\
+    Monday-Thursday\n
+	Breakfast: 7:00 am-10:00 am\n
+	Continuous Service: 11:30 am-8:00 pm\n
+	\n
+	Friday\n
+	Breakfast: 7:00 am-10:00 am\n
+	Continuous Service: 11:30 am-7:00 pm\n
+	\n
+	Saturday - Sunday\n
+	Continental Breakfast: 9:30 am-10:00 am\n
+	Continuous Service: 10:00 am-7:00 pm\n  
+    </string>
+    <string name="stein_title">The Stein</string>
+    <string name="stein_text">\
+    Daily 5:00pm-9:00pm
+    </string>
+    <string name="usdanupper_title">Usdan Boulevard</string>
+    <string name="usdanupper_text">\
+    Monday-Thursday\n
+	11:00 am-11:00 pm\n
+	\n
+	Friday\n
+	11:00 am-10:00 pm\n
+	\n
+	Sunday\n
+	7:00 pm-11:00 pm
+    </string>
+    <string name="usdanlower_title">Usdan Café</string>
+    <string name="usdanlower_text">\
+    Monday-Thursday\n
+	Breakfast: 8:00 am-10:15 am\n
+	Lunch: 11:30 am-2:15 pm\n
+	Dinner: 4:45 pm-8:00 pm\n
+	\n
+	Friday\n
+	Breakfast: 8:00 am-10:15 am\n
+	Lunch: 11:30 am-2:15 pm\n
+	\n
+	Saturday - Sunday\n
+	Brunch: 11:30 am-3:00 pm\n
+	Dinner: 4:45 pm-7:00 pm\n 
+    </string>
+</resources>

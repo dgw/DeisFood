@@ -1,0 +1,89 @@
+<LinearLayout
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	android:orientation="vertical"
+	android:layout_width="fill_parent"
+	android:layout_height="fill_parent" >
+<TextView
+	android:layout_width="fill_parent"
+	android:layout_height="wrap_content"
+	android:textSize="25dip"
+	android:text="@string/today_title" 
+	/>
+<TextView 
+	android:layout_width="fill_parent"
+	android:layout_height="wrap_content"
+	android:text="@string/today_date"
+	/>
+<Button
+	android:id="@+id/einsteins_button"
+	android:layout_width="fill_parent"
+	android:layout_height="wrap_content"
+	android:text="@string/einsteins_title"
+	/>
+<Button
+	android:id="@+id/javacity_button"
+	android:layout_width="fill_parent"
+	android:layout_height="wrap_content"
+	android:text="@string/javacity_title"
+	/>
+<Button
+	android:id="@+id/facultyclub_button"
+	android:layout_width="fill_parent"
+	android:layout_height="wrap_content"
+	android:text="@string/facultyclub_title"
+	/>
+<Button
+	android:id="@+id/ollies_button"
+	android:layout_width="fill_parent"
+	android:layout_height="wrap_content"
+	android:text="@string/ollies_title"
+	/>
+<Button
+	android:id="@+id/podusdan_button"
+	android:layout_width="fill_parent"
+	android:layout_height="wrap_content"
+	android:text="@string/podusdan_title"
+	/>
+<Button
+	android:id="@+id/podvillage_button"
+	android:layout_width="fill_parent"
+	android:layout_height="wrap_content"
+	android:text="@string/podvillage_title"
+	/>
+<Button
+	android:id="@+id/quadcafe_button"
+	android:layout_width="fill_parent"
+	android:layout_height="wrap_content"
+	android:text="@string/quadcafe_title"
+	/>
+<Button 
+	android:id="@+id/quiznos_button"
+	android:layout_width="fill_parent"
+	android:layout_height="wrap_content"
+	android:text="@string/quiznos_title"
+	/>
+<Button
+	android:id="@+id/sherman_button"
+	android:layout_width="fill_parent"
+	android:layout_height="wrap_content"
+	android:text="@string/sherman_title"
+	/>
+<Button 
+	android:id="@+id/stein_button"
+	android:layout_width="fill_parent"
+	android:layout_height="wrap_content"
+	android:text="@string/stein_title"
+	/>
+<Button
+	android:id="@+id/usdanlower_button"
+	android:layout_width="fill_parent"
+	android:layout_height="wrap_content"
+	android:text="@string/usdanlower_title"
+	/>
+<Button
+	android:id="@+id/usdanupper_button"
+	android:layout_width="fill_parent"
+	android:layout_height="wrap_content"
+	android:text="@string/usdanupper_title"
+	/>
+</LinearLayout>
