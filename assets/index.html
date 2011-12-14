@@ -1,0 +1,151 @@
+<html>
+	<head>
+		<script type="text/javascript">
+		function checkLocations()
+		{
+			
+			Date = new Date();
+			day = Date.getDay();
+			currTime = Date.getHours();
+			currTime = currTime * 100;
+	
+			//Is Einstein's Open?
+			//If Monday - Thursday between 8:00 am - 2:00 am (also 12:00 am - 2:00 am because of Sunday)
+			if((day < 5 && day != 0) && (currTime < 300 || currTime >= 800))
+				window.android.callEinsteins('Einstein Bros Bagels');
+			//If Friday between 8:00 am - 4:00 pm (also 12:00 am - 2:00 am because of Thursday)
+			else if(day == 5 && (currTime < 200 || (currTime >= 800 && currTime < 1600)))
+				window.android.callEinsteins('Einstein Bros Bagels');
+			//If Saturday between 11:00 am - 3:00 pm
+			else if(day == 6 && (currTime >= 1100 && currTime < 1500))
+				window.android.callEinsteins('Einstein Bros Bagels');
+			//If Sunday between  5:00 pm - 2:00 am
+			else if(day == 0 && currTime >= 1700)
+				window.android.callEinsteins('Einstein Bros Bagels');
+			else
+				window.android.callEinsteins('Nope');
+			
+			
+			//Is The Faculty Club Open?
+			//If Monday - Friday between 12:00 pm - 1:30 pm
+			if((day < 6 && day != 0) && (currTime >= 1200 && currTime < 1330))
+				window.android.callFacultyClub('The Faculty Club');
+			else
+				window.android.callFacultyClub('Nope');
+			
+			
+			//Is Java City Open?
+			//If Monday - Friday between 8:00 am - 4:00 pm
+			if((day < 6 && day != 0) && (currTime >= 800 && currTime < 1600))
+				window.android.callJavaCity('Java City Schneider');
+			else
+				window.android.callJavaCity('Nope');
+			
+			
+			//Is Ollies Open?
+			//If Thursday - Saturday between 10:00 pm - 3:00 am
+			if((day > 3) && (currTime >= 2200))
+				window.android.callOllies("Ollie's Eatery");
+			//Accounts for the 12 - 3 block that rolls over into Friday - Sunday
+			else if ((day > 4 || day == 0) && currTime < 300) 
+				window.android.callOllies("Ollie's Eatery");
+			else
+				window.android.callOllies('Nope');
+			
+			
+			//Is POD @ USDAN Open?
+			//If Monday - *Friday between 9:30 am - 2:00 am (*Friday is until 12:00)
+			if((day < 6 && day != 0) && (currTime < 200 || currTime >= 930)) //accounts for 12:00 - 2:00 from Sunday - Thursday)
+				window.android.callPODUsdan('P.O.D. Market at Usdan');
+			//If Saturday - *Sunday between 8:00 am - 12:00 am (*Sunday is until 2:00 am)
+			else if((day > 5 || day == 0) && currTime >= 800)
+				window.android.callPODUsdan('P.O.D. Market at Usdan');
+			else
+				window.android.callPODUsdan('Nope');
+			
+			
+			//Is POD @ Village Open?
+			//If Monday - Friday between 12:00 pm - 12:00 am
+			if((day < 6 && day !=0) && currTime >= 1200)
+				window.android.callPODVillage('P.O.D. Market at Village');
+			else if(day == 0 && currTime >= 1600)
+				window.android.callPODVillage('P.O.D. Market at Village');
+			else
+				window.android.callPODVillage('Nope');
+			
+			
+			//Is Quad Cafe Open?
+			//If Monday - Friday between 9:00 am - 2:00 pm
+			if((day < 6 && day != 0) && (currTime >= 900 && currTime < 1400))
+				window.android.callQuadCafe('Quad CafŽ');
+			else
+				window.android.callQuadCafe('Nope');
+			
+			
+			//Is Quiznos Open?
+			//If Monday - Friday between 11:00 am - 2:30 pm and 4:30 pm - 12:00 am
+			if((day < 6 && day != 0) && ((currTime >= 1100 && currTime < 1430) || currTime > 1630))
+				window.android.callQuiznos('Quiznos');
+			//If Saturday between 11:00 am - 12:00 am
+			else if(day == 6 && currTime >= 1100)
+				window.android.callQuiznos('Quiznos');
+			else
+				window.android.callQuiznos('Nope');
+			
+			
+			//Is Sherman Open?
+			//If Monday - Thursday between 7:00 am - 10:00 am or 11:30 am - 8:00 pm
+			if((day < 5 && day != 0) && ((currTime >= 700 && currTime < 1000) || (currTime >= 1130 && currTime < 2000)))
+				window.android.callSherman('Sherman Dining Hall');
+			//If Friday between 7:00 am - 10:00 am or 11:30 am - 7:00 pm
+			else if (day == 5 && ((currTime >= 700 && currTime < 1000) || (currTime >= 1130 && currTime < 1900)))
+				window.android.callSherman('Sherman Dining Hall');
+			//If Saturday - Sunday between 9:30 am - 7:00 pm
+			else if((day > 5 || day == 0) && (currTime >= 930 && currTime < 1900))
+				window.android.callSherman('Sherman Dining Hall');
+			else
+				window.android.callSherman('Nope');
+				
+				
+			//Is Stein Open?
+			//If Monday - Sunday between 5:00 pm - 9:00 pm
+			if(currTime >= 1700 && currTime < 2100)
+				window.android.callStein('The Stein');
+			else
+				window.android.callStein('Nope');
+			
+			
+			//Is Usdan Lower Open?
+			//If Monday - Friday between 8:00 am - 10:15 am or 11:30 am - 2:15 pm
+			if((day < 6 && day != 0) && ((currTime >= 800 && currTime < 1015) || (currTime >= 1130 && currTime < 1415)))
+				window.android.callUsdanUpper('Usdan Boulevard');
+			//If Monday - Thursday between 4:45 pm - 8:00 pm
+			else if((day < 5 && day != 0) && (currTime >= 1645 && currTime < 2000))
+				window.android.callUsdanUpper('Usdan Boulevard');
+			//If Saturday - SUnday between 11:30 am - 3:00 pm or 4:45 - 7:00 pm
+			else if((day > 5 || day == 0) && ((currTime >= 1130 && currTime < 1500) || (currTime >= 1645 && currTime < 1900)))
+				window.android.callUsdanUpper('Usdan Boulevard');
+			else
+				window.android.callUsdanUpper('Nope');
+	
+			//Is Usdan Upper Open?
+			//If Monday - Thursday between 11:00 am - 11:00 pm
+			if((day < 5 && day != 0) && (currTime >= 1100 && currTime < 2300))
+				window.android.callUsdanLower('Usdan CafŽ');
+			//If Friday between 11:00 am - 11:00 pm
+			else if(day == 5 && (currTime >= 1100 && currTime < 2200))
+				window.android.callUsdanLower('Usdan CafŽ');
+			//If Sunday between 7:00 pm - 11:00 pm
+			else if(day == 0 && (currTime >= 1900 && currTime < 2300))
+				window.android.callUsdanLower('Usdan CafŽ');
+			else
+				window.android.callUsdanLower('Nope');
+		}
+			
+	</script>
+	<title></title>
+
+	</head>
+	<body onload="checkLocations()">
+	</body>
+</html>

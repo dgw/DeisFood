@@ -4,6 +4,7 @@
       android:versionCode="1"
       android:versionName="Hardcoded Version">
     <uses-sdk android:minSdkVersion="10" />
+    <uses-permission android:name="android.permission.INTERNET" />
 
     <application android:icon="@drawable/icon" android:label="@string/app_name">
         <activity android:name=".Today"
@@ -13,6 +14,16 @@
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+       </activity>
+                
+       <activity
+		  android:name=".About"
+          android:label="@string/about_title"
+          android:theme="@android:style/Theme.Dialog">
+        </activity>     
+         <activity
+			  android:name=".BrowserRedirect"
+	          android:theme="@android:style/Theme.Black.NoTitleBar">
         </activity>
         <activity android:name=".AboutEinsteins"
                   android:label="@string/einsteins_title"

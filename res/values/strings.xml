@@ -2,114 +2,149 @@
 <resources>
     <string name="app_name">DeisFood</string>
     <string name="today_title">What\'s Open Right Now?</string>
-    <string name="today_date">Updated as of October 2011</string>
+    
+    <string name="about_label">About</string>
+    <string name="about_title">About DeisFood</string>
+   	<string name="about_text">\
+		DeisFood is a Brandeis University lifestyle application that will let you know which dining locations are open right now. 
+		All information used to determine hours can be found at http://www.Brandeis.CampusDish.com  
+		This application is not affiliated with Brandeis Dining Services in any way.
+	</string>
+    
+   <string name="go_button">Go</string>
+      <string name="browser_label">More Food Info...</string>
+       
+        
     <string name="einsteins_title">Einstein Bros Bagels</string>
-    <string name="einsteins_text">\
-    Monday-Thursday \n
-	8:00 am-2:00 am\n
-	\n
-	Friday\n
-	8:00 am-4:00 pm\n
-	\n
-	Saturday\n
-	11:00 am-3:00 pm\n
-	\n
-	Sunday\n
-	5:00 pm-2:00 am
+    <string name="einsteins_text">
+	    Coffee, bagels, breakfast pastries, grab and go salads and sandwiches
+	    \n\n
+	    Monday-Thursday \n
+		8:00 am-2:00 am\n
+		\n
+		Friday\n
+		8:00 am-4:00 pm\n
+		\n
+		Saturday\n
+		11:00 am-3:00 pm\n
+		\n
+		Sunday\n
+		5:00 pm-2:00 am
     </string>
     <string name="javacity_title">Java City Schneider</string>
     <string name="javacity_text">\
-    Monday-Friday\n
-	8:00 am-4:00 pm 
+    	Coffee shop with breakfast pastries, desserts and snacks
+	    Monday-Friday\n
+		8:00 am-4:00 pm 
     </string>
     <string name="facultyclub_title">The Faculty Club</string>
     <string name="facultyclub_text">\
-    Monday-Friday\n
-	12:00 pm-1:30 pm
+        Salad bar, homemade soups to go, Hot buffet, or dine in options
+    	\n\n
+	    Monday-Friday\n
+		12:00 pm-1:30 pm
     </string>
     <string name="ollies_title">Ollie\'s Eatery</string>
     <string name="ollies_text">\
-    Thursday-Saturday\n
-	10:00 pm-3:00 am
+        Late night diner food
+   		\n\n    
+	    Thursday-Saturday\n
+		10:00 pm-3:00 am
     </string>
     <string name="podusdan_title">P.O.D. Market at Usdan</string>
     <string name="podusdan_text">\
-    Monday-Thursday\n
-	9:30 am-2:00 am\n
-	\n
-	Friday\n
-	9:30 am-12:00 am\n
-	\n
-	Saturday\n
-	8:00 am-12:00 am\n
-	
-	Sunday\n
-	8:00 am-2:00 am
+        Convenience store with a wide variety of items
+        \n\n
+	    Monday-Thursday\n
+		9:30 am-2:00 am\n
+		\n
+		Friday\n
+		9:30 am-12:00 am\n
+		\n
+		Saturday\n
+		8:00 am-12:00 am\n
+		
+		Sunday\n
+		8:00 am-2:00 am
     </string>
     <string name="podvillage_title">P.O.D. Market at Village</string>
     <string name="podvillage_text">\
-    Monday-Friday\n 
-	12:00 pm – 12:00 am\n
-	\n
-	Sunday\n
-	4:00pm - 12:00 am
+        A smaller convenience store located on lower campus
+        \n\n
+	    Monday-Friday\n 
+		12:00 pm – 12:00 am\n
+		\n
+		Sunday\n
+		4:00pm - 12:00 am
     </string>
     <string name="quadcafe_title">Quad Café</string>
     <string name="quadcafe_text">\
-    Monday-Friday\n
-	9:00 am-2:00 pm
+        Snacks and drinks to go between classes
+        \n\n
+	    Monday-Friday\n
+		9:00 am-2:00 pm
     </string>
     <string name="quiznos_title">Quiznos</string>
     <string name="quiznos_text">\
-    Monday-Friday\n
-	11:00 am-2:30 pm\n
-	4:30 pm-12:00 am\n
-	\n
-	Saturday\n
-	11:00 am-12:00 am
+        Subs and Soups
+        \n\n
+	    Monday-Friday\n
+		11:00 am-2:30 pm\n
+		4:30 pm-12:00 am\n
+		\n
+		Saturday\n
+		11:00 am-12:00 am
     </string>
     <string name="sherman_title">Sherman Dining Hall</string>
     <string name="sherman_text">\
-    Monday-Thursday\n
-	Breakfast: 7:00 am-10:00 am\n
-	Continuous Service: 11:30 am-8:00 pm\n
-	\n
-	Friday\n
-	Breakfast: 7:00 am-10:00 am\n
-	Continuous Service: 11:30 am-7:00 pm\n
-	\n
-	Saturday - Sunday\n
-	Continental Breakfast: 9:30 am-10:00 am\n
-	Continuous Service: 10:00 am-7:00 pm\n  
+        All-you-can-eat buffet
+        \n\n
+	    Monday-Thursday\n
+		Breakfast: 7:00 am-10:00 am\n
+		Continuous Service: 11:30 am-8:00 pm\n
+		\n
+		Friday\n
+		Breakfast: 7:00 am-10:00 am\n
+		Continuous Service: 11:30 am-7:00 pm\n
+		\n
+		Saturday - Sunday\n
+		Continental Breakfast: 9:30 am-10:00 am\n
+		Continuous Service: 10:00 am-7:00 pm\n  
     </string>
     <string name="stein_title">The Stein</string>
     <string name="stein_text">\
-    Daily 5:00pm-9:00pm
+        Pub style food and drinks
+        \n\n
+ 	   Daily 5:00pm-9:00pm
     </string>
     <string name="usdanupper_title">Usdan Boulevard</string>
     <string name="usdanupper_text">\
-    Monday-Thursday\n
-	11:00 am-11:00 pm\n
-	\n
-	Friday\n
-	11:00 am-10:00 pm\n
-	\n
-	Sunday\n
-	7:00 pm-11:00 pm
+        Grill station, pizza, smoothie bar, deli, Mexican food and grab and go options
+        \n\n
+	    Monday-Thursday\n
+		11:00 am-11:00 pm\n
+		\n
+		Friday\n
+		11:00 am-10:00 pm\n
+		\n
+		Sunday\n
+		7:00 pm-11:00 pm
     </string>
     <string name="usdanlower_title">Usdan Café</string>
     <string name="usdanlower_text">\
-    Monday-Thursday\n
-	Breakfast: 8:00 am-10:15 am\n
-	Lunch: 11:30 am-2:15 pm\n
-	Dinner: 4:45 pm-8:00 pm\n
-	\n
-	Friday\n
-	Breakfast: 8:00 am-10:15 am\n
-	Lunch: 11:30 am-2:15 pm\n
-	\n
-	Saturday - Sunday\n
-	Brunch: 11:30 am-3:00 pm\n
-	Dinner: 4:45 pm-7:00 pm\n 
+        Salad bar, soup, deli, Japanese food, vegan station, comfort food, breakfast all day station
+        \n\n
+	    Monday-Thursday\n
+		Breakfast: 8:00 am-10:15 am\n
+		Lunch: 11:30 am-2:15 pm\n
+		Dinner: 4:45 pm-8:00 pm\n
+		\n
+		Friday\n
+		Breakfast: 8:00 am-10:15 am\n
+		Lunch: 11:30 am-2:15 pm\n
+		\n
+		Saturday - Sunday\n
+		Brunch: 11:30 am-3:00 pm\n
+		Dinner: 4:45 pm-7:00 pm\n 
     </string>
 </resources>

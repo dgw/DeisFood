@@ -1,6 +1,5 @@
 package info.tkirk.deisfood;
 
-
 import android.app.Activity;
 import android.os.Bundle;
 

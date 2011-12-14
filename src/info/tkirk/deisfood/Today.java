@@ -1,233 +1,280 @@
 package info.tkirk.deisfood;
 
-import java.util.Calendar;
-import java.util.Date;
-
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
+import android.os.Handler;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.View.OnClickListener;
-import android.content.Intent;
+import android.webkit.WebView;
 
 public class Today extends Activity implements OnClickListener {
-	private static final String Tag = "DAY";
-
-	/** Called when the activity is first created. */
+	private final Handler handler = new Handler(); 
+	private WebView webView;
+	
+	View einsteinsButton;
+	View facultyClubButton;
+	View javaCityButton;
+	View olliesButton;
+	View podUsdanButton;
+	View podVillageButton;
+	View quadCafeButton;
+	View quiznosButton;
+	View shermanButton;
+	View steinButton;
+	View usdanLowerButton;
+	View usdanUpperButton;
+	
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.main);
 		
 		//Assign all the views
-		View einsteinsButton = findViewById(R.id.einsteins_button);
-		View facultyClubButton = findViewById(R.id.facultyclub_button);
-		View javaCityButton = findViewById(R.id.javacity_button);
-		View olliesButton = findViewById(R.id.ollies_button);
-		View podUsdanButton = findViewById(R.id.podusdan_button);
-		View podVillageButton = findViewById(R.id.podvillage_button);
-		View quadCafeButton = findViewById(R.id.quadcafe_button);
-		View quiznosButton = findViewById(R.id.quiznos_button);
-		View shermanButton = findViewById(R.id.sherman_button);
-		View steinButton = findViewById(R.id.stein_button);
-		View usdanLowerButton = findViewById(R.id.usdanlower_button);
-		View usdanUpperButton = findViewById(R.id.usdanupper_button);
-		
-		//Get Date
-		Calendar rightNow = Calendar.getInstance();
-		Date date = rightNow.getTime();
-		
-		//Get Day, Hour, and Minutes
-		int day = date.getDay();
-		int hour = date.getHours();
-		int minutes = date.getMinutes();
-		
-		//Log
-		Log.v(Tag, "day="+day);
-		
-		//HHMM : 24 Hour Time
-		hour *= 100;
-		int currTime = hour + minutes;
-		
-		
-		//Is Einstein's Open?
-		//If Monday - Thursday between 8:00 am - 2:00 am (also 12:00 am - 2:00 am because of Sunday)
-		if((day < 5 && day != 0) && (currTime < 200 || currTime >= 800))
-			einsteinsButton.setOnClickListener(this);
-		//If Friday between 8:00 am - 4:00 pm (also 12:00 am - 2:00 am because of Thursday)
-		else if(day == 5 && (currTime < 200 || (currTime >= 800 && currTime < 1600)))
-			einsteinsButton.setOnClickListener(this);
-		//If Saturday between 11:00 am - 3:00 pm
-		else if(day == 6 && (currTime >= 1100 && currTime < 1500))
-			einsteinsButton.setOnClickListener(this);
-		//If Sunday between  5:00 pm - 2:00 am
-		else if(day == 0 && currTime >= 1700)
-			einsteinsButton.setOnClickListener(this);
-		else
-			einsteinsButton.setVisibility(View.GONE);
-		
-		
-		//Is The Faculty Club Open?
-		//If Monday - Friday between 12:00 pm - 1:30 pm
-		if((day < 6 && day != 0) && (currTime >= 1200 && currTime < 1330))
-			facultyClubButton.setOnClickListener(this);
-		else
-			facultyClubButton.setVisibility(View.GONE);
-		
-		
-		//Is Java City Open?
-		//If Monday - Friday between 8:00 am - 4:00 pm
-		if((day < 6 && day != 0) && (currTime >= 800 && currTime < 1600))
-			javaCityButton.setOnClickListener(this);
-		else
-			javaCityButton.setVisibility(View.GONE);
-		
-		
-		//Is Ollies Open?
-		//If Thursday - Saturday between 10:00 pm - 3:00 am
-		if((day > 3) && (currTime >= 2200))
-			olliesButton.setOnClickListener(this);
-		//Accounts for the 12 - 3 block that rolls over into Friday - Sunday
-		else if ((day > 4 || day == 0) && currTime < 300) 
-			olliesButton.setOnClickListener(this);
-		else
-			olliesButton.setVisibility(View.GONE);
-		
-		
-		//Is POD @ USDAN Open?
-		//If Monday - *Friday between 9:30 am - 2:00 am (*Friday is until 12:00)
-		if((day < 6 && day != 0) && (currTime < 200 || currTime >= 930)) //accounts for 12:00 - 2:00 from Sunday - Thursday)
-			podUsdanButton.setOnClickListener(this);	
-		//If Saturday - *Sunday between 8:00 am - 12:00 am (*Sunday is until 2:00 am)
-		else if((day > 5 || day == 0) && currTime >= 800)
-			podUsdanButton.setOnClickListener(this);
-		else
-			podUsdanButton.setVisibility(View.GONE);
-		
-		
-		//Is POD @ Village Open?
-		//If Monday - Friday between 12:00 pm - 12:00 am
-		if((day < 6 && day !=0) && currTime >= 1200)
-			podVillageButton.setOnClickListener(this);
-		else if(day == 0 && currTime >= 1600)
-			podVillageButton.setOnClickListener(this);
-		else
-			podVillageButton.setVisibility(View.GONE);
-		
-		
-		//Is Quad Cafe Open?
-		//If Monday - Friday between 9:00 am - 2:00 pm
-		if((day < 6 && day != 0) && (currTime >= 900 && currTime < 1400))
-			quadCafeButton.setOnClickListener(this);
-		else
-			quadCafeButton.setVisibility(View.GONE);
-		
-		
-		//Is Quiznos Open?
-		//If Monday - Friday between 11:00 am - 2:30 pm and 4:30 pm - 12:00 am
-		if((day < 6 && day != 0) && ((currTime >= 1100 && currTime < 1430) || currTime > 1630))
-			quiznosButton.setOnClickListener(this);
-		//If Saturday between 11:00 am - 12:00 am
-		else if(day == 6 && currTime >= 1100)
-			quiznosButton.setOnClickListener(this);
-		else
-			quiznosButton.setVisibility(View.GONE);
-		
-		
-		//Is Sherman Open?
-		//If Monday - Thursday between 7:00 am - 10:00 am or 11:30 am - 8:00 pm
-		if((day < 5 && day != 0) && ((currTime >= 700 && currTime < 1000) || (currTime >= 1130 && currTime < 2000)))
-			shermanButton.setOnClickListener(this);
-		//If Friday between 7:00 am - 10:00 am or 11:30 am - 7:00 pm
-		else if (day == 5 && ((currTime >= 700 && currTime < 1000) || (currTime >= 1130 && currTime < 1900)))
-			shermanButton.setOnClickListener(this);
-		//If Saturday - Sunday between 9:30 am - 7:00 pm
-		else if((day > 5 || day == 0) && (currTime >= 930 && currTime < 1900))
-			shermanButton.setOnClickListener(this);
-		else
-			shermanButton.setVisibility(View.GONE);
-			
-			
-		//Is Stein Open?
-		//If Monday - Sunday between 5:00 pm - 9:00 pm
-		if(currTime >= 1700 && currTime < 2100)
-			steinButton.setOnClickListener(this);
-		else
-			steinButton.setVisibility(View.GONE);
-		
-		
-		//Is Usdan Lower Open?
-		//If Monday - Friday between 8:00 am - 10:15 am or 11:30 am - 2:15 pm
-		if((day < 6 && day != 0) && ((currTime >= 800 && currTime < 1015) || (currTime >= 1130 && currTime < 1415)))
-			usdanLowerButton.setOnClickListener(this);
-		//If Monday - Thursday between 4:45 pm - 8:00 pm
-		else if((day < 5 && day != 0) && (currTime >= 1645 && currTime < 2000))
-			usdanLowerButton.setOnClickListener(this);
-		//If Saturday - SUnday between 11:30 am - 3:00 pm or 4:45 - 7:00 pm
-		else if((day > 5 || day == 0) && ((currTime >= 1130 && currTime < 1500) || (currTime >= 1645 && currTime < 1900)))
-			usdanLowerButton.setOnClickListener(this);
-		else
-			usdanLowerButton.setVisibility(View.GONE);
-		
-		
-		//Is Usdan Upper Open?
-		//If Monday - Thursday between 11:00 am - 11:00 pm
-		if((day < 5 && day != 0) && (currTime >= 1100 && currTime < 2300))
-			usdanUpperButton.setOnClickListener(this);
-		//If Friday between 11:00 am - 11:00 pm
-		else if(day == 5 && (currTime >= 1100 && currTime < 2200))
-			usdanUpperButton.setOnClickListener(this);
-		//If Sunday between 7:00 pm - 11:00 pm
-		else if(day == 0 && (currTime >= 1900 && currTime < 2300))
-			usdanUpperButton.setOnClickListener(this);
-		else
-			usdanUpperButton.setVisibility(View.GONE);
+		einsteinsButton = findViewById(R.id.einsteins_button);
+		facultyClubButton = findViewById(R.id.facultyclub_button);
+	 	javaCityButton = findViewById(R.id.javacity_button);
+	 	olliesButton = findViewById(R.id.ollies_button);
+	 	podUsdanButton = findViewById(R.id.podusdan_button);
+	 	podVillageButton = findViewById(R.id.podvillage_button);
+	 	quadCafeButton = findViewById(R.id.quadcafe_button);
+	 	quiznosButton = findViewById(R.id.quiznos_button);
+	 	shermanButton = findViewById(R.id.sherman_button);
+	 	steinButton = findViewById(R.id.stein_button);
+	 	usdanLowerButton = findViewById(R.id.usdanlower_button);
+	 	usdanUpperButton = findViewById(R.id.usdanupper_button);
+	 	
+	 	//webView
+	 	webView = (WebView) findViewById(R.id.web_view);
+	 	webView.getSettings().setJavaScriptEnabled(true);
+	 	webView.addJavascriptInterface(new AndroidBridge(),
+            "android");
+	 	webView.loadUrl("http://people.brandeis.edu/~tkirk/deisfood.html");
+	 	
+	 	//Initiate Views
+	 	einsteinsButton.setOnClickListener(this);
+	 	facultyClubButton.setOnClickListener(this);
+	 	javaCityButton.setOnClickListener(this);
+	 	olliesButton.setOnClickListener(this);
+	 	podUsdanButton.setOnClickListener(this);
+	 	podVillageButton.setOnClickListener(this);
+	 	quadCafeButton.setOnClickListener(this);
+	 	quiznosButton.setOnClickListener(this);
+	 	shermanButton.setOnClickListener(this);
+	 	steinButton.setOnClickListener(this);
+	 	usdanLowerButton.setOnClickListener(this);
+	    usdanUpperButton.setOnClickListener(this);
+	 	
+
 
 	}
-	
-	public void onClick(View v) {		
+
+   
+   //Java Object exposed to JavaScript
+   private class AndroidBridge  {
+      public void callEinsteins(final String arg)  { 
+         handler.post(new Runnable() {
+            public void run()  {
+            	if(!arg.equals("Einstein Bros Bagels"))
+       				einsteinsButton.setVisibility(View.GONE);
+            }
+         });
+      }
+      
+      public void callFacultyClub(final String arg) {
+          handler.post(new Runnable() {
+             public void run() {
+             	if(!arg.equals("The Faculty Club"))
+             		facultyClubButton.setVisibility(View.GONE);
+             }
+          });
+       }
+      
+      public void callJavaCity(final String arg) { 
+          handler.post(new Runnable() {
+             public void run() {
+             	if(!arg.equals("Java City Schneider"))
+             		javaCityButton.setVisibility(View.GONE);
+             }
+          });
+       }
+      
+      public void callOllies(final String arg) { 
+          handler.post(new Runnable() {
+             public void run() {
+             	if(!arg.equals("Ollie's Eatery"))
+             		olliesButton.setVisibility(View.GONE);
+             }
+          });
+       }
+      public void callPODUsdan(final String arg) {
+          handler.post(new Runnable() {
+             public void run() {
+             	if(!arg.equals("P.O.D. Market at Usdan"))
+             		podUsdanButton.setVisibility(View.GONE);
+             }
+          });
+       }
+      public void callPODVillage(final String arg) {
+          handler.post(new Runnable() {
+             public void run() {
+             	if(!arg.equals("P.O.D. Market at Village"))
+             		podVillageButton.setVisibility(View.GONE);
+             }
+          });
+       }
+      public void callQuadCafe(final String arg) { 
+          handler.post(new Runnable() {
+             public void run() {
+             	if(!arg.equals("Quad CafŽ"))
+             		quadCafeButton.setVisibility(View.GONE);
+             }
+          });
+       }
+      public void callQuiznos(final String arg) { 
+          handler.post(new Runnable() {
+             public void run() {
+             	if(!arg.equals("Quiznos"))
+             		quiznosButton.setVisibility(View.GONE);
+             }
+          });
+       }
+      public void callSherman(final String arg) { 
+          handler.post(new Runnable() {
+             public void run() {
+             	if(!arg.equals("Sherman Dining Hall"))
+             		shermanButton.setVisibility(View.GONE);
+             }
+          });
+       }
+      public void callStein(final String arg) { 
+          handler.post(new Runnable() {
+             public void run() {
+             	if(!arg.equals("The Stein"))
+             		steinButton.setVisibility(View.GONE);
+             }
+          });
+       }
+      public void callUsdanLower(final String arg) { 
+          handler.post(new Runnable() {
+             public void run() {
+             	if(!arg.equals("Usdan CafŽ"))
+             		usdanLowerButton.setVisibility(View.GONE);
+             }
+          });
+       }
+      
+      public void callUsdanUpper(final String arg) { 
+          handler.post(new Runnable() {
+             public void run() {
+             	if(!arg.equals("Usdan Boulevard"))
+             		usdanUpperButton.setVisibility(View.GONE);
+             }
+          });
+       }
+
+   }
+   
+   public void onClick(View v) {		
 		switch(v.getId()) {
 		case R.id.einsteins_button:
-			startActivity(new Intent(this, AboutEinsteins.class));
+			 Intent i = new Intent(this, AboutEinsteins.class);
+	    	 i.addFlags(Intent.FLAG_ACTIVITY_NO_USER_ACTION);
+	         startActivity(i);
 			break;
 		case R.id.facultyclub_button:
-			startActivity(new Intent(this, AboutFacultyClub.class));
+			 Intent j = new Intent(this, AboutFacultyClub.class);
+	    	 j.addFlags(Intent.FLAG_ACTIVITY_NO_USER_ACTION);
+	         startActivity(j);
 			break;
 		case R.id.javacity_button:
-			startActivity(new Intent(this, AboutJavaCity.class));
+			 Intent a = new Intent(this, AboutJavaCity.class);
+	    	 a.addFlags(Intent.FLAG_ACTIVITY_NO_USER_ACTION);
+	         startActivity(a);
 			break;
 		case R.id.ollies_button:
-			startActivity(new Intent(this, AboutOllies.class));
-			break;
+			 Intent b = new Intent(this, AboutOllies.class);
+	    	 b.addFlags(Intent.FLAG_ACTIVITY_NO_USER_ACTION);
+	         startActivity(b);
+			 break;
 		case R.id.podusdan_button:
-			startActivity(new Intent(this, AboutPodUsdan.class));
+			 Intent c = new Intent(this, AboutPodUsdan.class);
+	    	 c.addFlags(Intent.FLAG_ACTIVITY_NO_USER_ACTION);
+	         startActivity(c);
 			break;
 		case R.id.podvillage_button:
-			startActivity(new Intent(this, AboutPodVillage.class));
+			 Intent d = new Intent(this, AboutPodVillage.class);
+	    	 d.addFlags(Intent.FLAG_ACTIVITY_NO_USER_ACTION);
+	         startActivity(d);
 			break;
 		case R.id.quadcafe_button:
-			startActivity(new Intent(this, AboutQuadCafe.class));
+			 Intent e = new Intent(this, AboutQuadCafe.class);
+	    	 e.addFlags(Intent.FLAG_ACTIVITY_NO_USER_ACTION);
+	         startActivity(e);
 			break;
 		case R.id.quiznos_button:
-			startActivity(new Intent(this, AboutQuiznos.class));
+			 Intent f = new Intent(this, AboutQuiznos.class);
+	    	 f.addFlags(Intent.FLAG_ACTIVITY_NO_USER_ACTION);
+	         startActivity(f);
 			break;
 		case R.id.sherman_button:
-			startActivity(new Intent(this, AboutSherman.class));
+			 Intent g = new Intent(this, AboutSherman.class);
+	    	 g.addFlags(Intent.FLAG_ACTIVITY_NO_USER_ACTION);
+	         startActivity(g);
 			break;
 		case R.id.stein_button:
-			startActivity(new Intent(this, AboutStein.class));
+			 Intent h = new Intent(this, AboutStein.class);
+	    	 h.addFlags(Intent.FLAG_ACTIVITY_NO_USER_ACTION);
+	         startActivity(h);
 			break;
 		case R.id.usdanlower_button:
-			startActivity(new Intent(this, AboutUsdanLower.class));
+			 Intent l = new Intent(this, AboutUsdanLower.class);
+	    	 l.addFlags(Intent.FLAG_ACTIVITY_NO_USER_ACTION);
+	         startActivity(l);
 			break;
 		case R.id.usdanupper_button:
-			startActivity(new Intent(this, AboutUsdanUpper.class));
+			 Intent k = new Intent(this, AboutUsdanUpper.class);
+	    	 k.addFlags(Intent.FLAG_ACTIVITY_NO_USER_ACTION);
+	         startActivity(k);
 			break;
 		}
 	}
+   
+   @Override
+   public boolean onCreateOptionsMenu(Menu menu) {
+      super.onCreateOptionsMenu(menu);
+      MenuInflater inflater = getMenuInflater();
+      inflater.inflate(R.menu.menu, menu);
+      return true;
+   }
+   
+
+   
+   @Override
+   public boolean onOptionsItemSelected(MenuItem item) {
+      switch (item.getItemId()) {
+      case R.id.about:
+    	 Intent i = new Intent(this, About.class);
+    	 i.addFlags(Intent.FLAG_ACTIVITY_NO_USER_ACTION);
+         startActivity(i);
+         return true;
+      
+  	case R.id.browser:
+ 	 Intent j = new Intent(this, BrowserRedirect.class);
+ 	 j.addFlags(Intent.FLAG_ACTIVITY_NO_USER_ACTION);
+      startActivity(j);
+      return true;
+   }
+      return false;
+   }
+   
 	
-	public void onPause() {
-		super.onPause();
-		onDestroy();
+    //I want to make sure the web page is loaded every time someone starts the app
+	public void onUserLeaveHint() {
+		super.onUserLeaveHint();
+		finish();
 	}
 }
